@@ -39,3 +39,21 @@ module.exports.getAllConnectedUsers = async (req, res) => {
         console.log(error)
     }
 }
+
+module.exports.disconectAll = async (req, res) => {
+    try {
+        const response = await connectedUsers.deleteMany()
+        if(response.deletedCount === 0){
+            res.status(404).json({
+                ok: false,
+                message: `No hay usuarios`
+            })
+        }
+        return res.json({
+            ok: true,
+            message: `Se desconectaron ${response.deletedCount} usuarios`
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
