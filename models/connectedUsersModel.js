@@ -8,6 +8,15 @@ const connectedUserModel = new mongoose.Schema({
         max: 20,
         unique: true
     },
+    email: {
+        type: String,
+        required: true,
+        max: 50
+    },
+    connectedAt: {
+        type: Date,
+        default: Date.now
+    },
     isAvatarImageSet: {
         type: Boolean,
         dafult: false
