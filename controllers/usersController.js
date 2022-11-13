@@ -53,8 +53,9 @@ module.exports.login = async (req, res) => {
             })
         }
         delete user.password
-        const conectar = await connectedUser.create({
-            username: user.username
+        await connectedUser.create({
+            username: user.username,
+            email: user.email
         })
         return res.json({
             msg: "Logged Succesfully",

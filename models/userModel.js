@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         min: 6
     },
+    registerDate: {
+        type: Date,
+        default: Date.now
+    },
     isAvatarImageSet: {
         type: Boolean,
         dafult: false
