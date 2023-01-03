@@ -30,7 +30,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: '*'
+        origin: 'letstalk-pied.vercel.app'
     }
 });
 
